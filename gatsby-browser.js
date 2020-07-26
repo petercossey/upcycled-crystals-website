@@ -4,4 +4,5 @@
  * See: https://www.gatsbyjs.org/docs/browser-apis/
  */
 
-// You can delete this file if you're not using it
+// Import all our Tailwind CSS into global styles.
+import "./src/css/styles.css";
