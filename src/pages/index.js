@@ -22,7 +22,7 @@ const IndexPage = ({ data }) => (
           <p>{node.size}</p>
           <p>{node.price_per_unit}</p>
           <p><strong>Pieces per pack:</strong> {node.pieces_per_pack}</p>
-          <p><a href={`https://swarovski-professional.com/en-WORLD${node.url}`} target="_blank">More info</a></p>
+          <p><a href={`https://swarovski-professional.com/en-WORLD${node.url}`} target="_blank" rel="noreferrer">More info</a></p>
           <img src={`https://swarovski-professional.com${node.thumbnail_2x}`} alt=""/>
         </article>
       ))}
