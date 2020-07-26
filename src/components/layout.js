@@ -23,7 +23,7 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <>
+    <div className="bg-gray-200 font-roboto">
       <Header siteTitle={data.site.siteMetadata.title} />
       <div>
         <main>{children}</main>
@@ -31,7 +31,7 @@ const Layout = ({ children }) => {
           Don't @ me Sw4r0v5k1.
         </footer>
       </div>
-    </>
+    </div>
   )
 }
 
