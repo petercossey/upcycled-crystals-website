@@ -5,11 +5,11 @@ import SEO from "../components/seo"
 import { graphql } from "gatsby"
 import LinkSVG from "../components/assets/external-link.svg"
 
-const IndexPage = ({ data }) => (
+const CheaperPage = ({ data }) => (
   <Layout>
     <SEO title="Home" />
     <div className="flex flex-col sm:flex-row sm:flex-wrap">
-      {data.allCatalogueCsv.edges.map(({ node }, index) => (
+      {data.allCatalogue144AndCheaperCsv.edges.map(({ node }, index) => (
         <div key={index} className="px-3 mb-3 w-full sm:w-1/2 lg:w-1/4 xl:w-1/5">
           <article className="bg-white rounded-lg shadow flex flex-row-reverse p-4">
             <div className="product__text w-2/3 pl-3">
@@ -75,8 +75,8 @@ const IndexPage = ({ data }) => (
 )
 
 export const query = graphql`
-  query IndexQuery {
-    allCatalogueCsv(limit: 756) {
+  query CheaperQuery {
+    allCatalogue144AndCheaperCsv {
       edges {
         node {
           category
@@ -102,4 +102,4 @@ export const query = graphql`
   }
 `
 
-export default IndexPage
+export default CheaperPage

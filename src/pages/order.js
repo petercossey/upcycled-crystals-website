@@ -5,18 +5,23 @@ import SEO from "../components/seo"
 import { graphql } from "gatsby"
 import LinkSVG from "../components/assets/external-link.svg"
 
-const IndexPage = ({ data }) => (
+const OrderPage = ({ data }) => (
   <Layout>
     <SEO title="Home" />
     <div className="flex flex-col sm:flex-row sm:flex-wrap">
-      {data.allCatalogueCsv.edges.map(({ node }, index) => (
-        <div key={index} className="px-3 mb-3 w-full sm:w-1/2 lg:w-1/4 xl:w-1/5">
+      {data.allCustomOrderCsv.edges.map(({ node }, index) => (
+        <div
+          key={index}
+          className="px-3 mb-3 w-full sm:w-1/2 lg:w-1/4 xl:w-1/5"
+        >
           <article className="bg-white rounded-lg shadow flex flex-row-reverse p-4">
             <div className="product__text w-2/3 pl-3">
               <h3 className="font-normal text-base text-gray-900">
                 {node.name}{" "}
                 <span className="text-base px-2 py-1 text-orange-800 leading-4 font-medium bg-orange-100 rounded-full mr-2 mb-2 inline-block">
-                  <strong>€{new Intl.NumberFormat().format(node.price_per_unit)}</strong>
+                  <strong>
+                    €{new Intl.NumberFormat().format(node.price_per_unit)}
+                  </strong>
                 </span>
               </h3>
               <p className="my-1 text-sm text-gray-700">
@@ -75,8 +80,8 @@ const IndexPage = ({ data }) => (
 )
 
 export const query = graphql`
-  query IndexQuery {
-    allCatalogueCsv(limit: 756) {
+  query OrderQuery {
+    allCustomOrderCsv {
       edges {
         node {
           category
@@ -102,4 +107,4 @@ export const query = graphql`
   }
 `
 
-export default IndexPage
+export default OrderPage
